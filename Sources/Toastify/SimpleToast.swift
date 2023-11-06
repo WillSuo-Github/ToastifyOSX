@@ -13,6 +13,14 @@ public enum Toast {
     
     public static func show(message: String, config: ToastConfig = .default(), on window: NSWindow) {
         guard let contentView = window.contentView else { return }
+        _show(message: message, config: config, on: contentView)
+    }
+    
+    public static func show(message: String, config: ToastConfig = .default(), on container: NSView) {
+        _show(message: message, config: config, on: container)
+    }
+    
+    private static func _show(message: String, config: ToastConfig, on contentView: NSView) {
         removeAllToastView(in: contentView)
         
         let toastView = ToastView(config: config, message: message)
