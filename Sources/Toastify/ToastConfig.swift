@@ -24,9 +24,9 @@ public struct ToastConfig {
         
         func backgroundColor() -> NSColor {
             switch self {
-            case .tips, .success: return NSColor(deviceRed: 239.0 / 255.0, green: 239.0 / 255.0, blue: 239.0 / 255.0, alpha: 1)
-            case .warning: return NSColor(deviceRed: 255.0 / 255.0, green: 235.0 / 255.0, blue: 191.0 / 255.0, alpha: 1)
-            case .error: return NSColor(deviceRed: 255.0 / 255.0, green: 220.0 / 255.0, blue: 217.0 / 255.0, alpha: 1)
+            case .tips, .success: return NSColor(resource: .tipsBackground)
+            case .warning: return NSColor.init(resource: .waringBackground)
+            case .error: return NSColor.init(resource: .errorBackground)
             }
         }
         
