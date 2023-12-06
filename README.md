@@ -5,6 +5,7 @@
 ToastifyOSX is a lightweight and customizable library for displaying toast notifications on macOS. It provides a simple API to show various types of toasts with ease.
 
 ## Features
+![Toast](https://github.com/WillSuo-Github/ToastifyOSX/assets/15070906/a98fe472-65c6-440d-8493-c4cc1a3515ca)
 
 - **Four Toast Types**: ToastifyOSX supports four types of toasts: Success, Warning, Error, and Tips.
 - **Simple API**: Intuitive and straightforward API for displaying toasts with minimal code.
