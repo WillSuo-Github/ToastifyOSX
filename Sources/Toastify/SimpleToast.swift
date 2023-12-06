@@ -47,7 +47,7 @@ public enum Toast {
         let shadow = NSShadow()
         shadow.shadowOffset = CGSize(width: 0, height: 0)
         shadow.shadowColor = NSColor(white: 0, alpha: 0.2)
-        shadow.shadowBlurRadius = 6
+        shadow.shadowBlurRadius = 5
         return shadow
     }
     
