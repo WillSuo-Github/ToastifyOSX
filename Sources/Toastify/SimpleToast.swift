@@ -33,6 +33,7 @@ public enum Toast {
             context.allowsImplicitAnimation = true
             context.duration = 0.25
             context.timingFunction = .init(name: .easeInEaseOut)
+            toastView.animator().shadow = makeShadow()
             makeToastViewConstraints(toastView: toastView, contentView: contentView, isShowing: true)
             contentView.layoutSubtreeIfNeeded()
         }
@@ -40,6 +41,14 @@ public enum Toast {
         DispatchQueue.main.asyncAfter(deadline: .now() + config.duration) {
             toastView.removeFromSuperview()
         }
+    }
+    
+    private static func makeShadow() -> NSShadow {
+        let shadow = NSShadow()
+        shadow.shadowOffset = CGSize(width: 0, height: 0)
+        shadow.shadowColor = NSColor(white: 0, alpha: 0.2)
+        shadow.shadowBlurRadius = 6
+        return shadow
     }
     
     private static func removeAllToastView(in contentView: NSView) {
