@@ -16,16 +16,16 @@ public struct ToastConfig {
         
         func messageColor() -> NSColor {
             switch self {
-            case .tips, .success: return NSColor.textColor
-            case .warning: return NSColor.systemYellow.withSystemEffect(.deepPressed)
-            case .error: return NSColor.systemRed.withSystemEffect(.deepPressed)
+            case .tips, .success: return NSColor(resource: .tipsMessage)
+            case .warning: return NSColor(resource: .waringMessage)
+            case .error: return NSColor(resource: .errorMessage)
             }
         }
         
         func backgroundColor() -> NSColor {
             switch self {
             case .tips, .success: return NSColor(resource: .tipsBackground)
-            case .warning: return NSColor.init(resource: .waringBackground)
+            case .warning: return NSColor(resource: .waringBackground)
             case .error: return NSColor.init(resource: .errorBackground)
             }
         }
