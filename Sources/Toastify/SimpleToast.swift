@@ -11,8 +11,8 @@ import SnapKit
 public enum Toast {
     static var toastView: ToastView?
     
-    public static func show(message: String, config: ToastConfig = .default(), on window: NSWindow) {
-        guard let contentView = window.contentView else { return }
+    public static func show(message: String, config: ToastConfig = .default(), on window: NSWindow?) {
+        guard let window = window ?? NSApplication.shared.mainWindow, let contentView = window.contentView else { return }
         _show(message: message, config: config, on: contentView)
     }
     
